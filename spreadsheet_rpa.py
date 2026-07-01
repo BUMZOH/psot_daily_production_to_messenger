@@ -1,14 +1,22 @@
 from datetime import datetime
 from pathlib import Path
-
 from playwright.sync_api import sync_playwright
 
 
+# 新江工場用SpreadSheet
 SPREADSHEET_URL = (
     "https://docs.google.com/spreadsheets/d/"
     "1_vy216XmrivXZLFosfxT3TLmpHHnyX2lgbhk3f7P-DY/"
     "edit#gid=0"
 )
+
+# 本社工場用SpreadSheet
+# SPREADSHEET_URL = (
+#     "https://docs.google.com/spreadsheets/d/"
+#     "1lhgBJKB921__GgqreES7som-YchP-MikzS_Gq1ERsUM/"
+#     "edit?gid=0#gid=0"
+# )
+
 
 SAVE_DIR = Path("screenshots")
 
@@ -65,3 +73,11 @@ def capture_spreadsheet(
 
 if __name__ == "__main__":
     capture_spreadsheet()
+
+
+# -- MEMO ----
+#
+# 新しいSpreadSheetにログインできない問題発生
+# → 改めてPlaywrightの使い方勉強する
+# → Googleは特に認証が厳しいので自働化向きではない
+#   (せっかく自働化しても将来的にセキュリティが厳しくなるおそれあり)

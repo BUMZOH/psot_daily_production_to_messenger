@@ -4,12 +4,12 @@ from spreadsheet_rpa import capture_spreadsheet
 
 def main() -> None:
     print("スプレッドシートをキャプチャします...")
-
     image_path = capture_spreadsheet()
 
-    print("Messengerへ画像を投稿します...")
-
-    send_image_to_messenger(image_path)
+    # 夜遅くのMessenger投稿は社員に対して迷惑となるため廃止
+    if False:
+        print("Messengerへ画像を投稿します...")
+        send_image_to_messenger(image_path)
 
     print("処理が完了しました")
 
